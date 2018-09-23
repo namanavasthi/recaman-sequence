@@ -1,0 +1,7 @@
+#header--mainWrapper img {
+    border-radius: 50px;
+}
+
+#header--modal {
+    display: none;
+}
