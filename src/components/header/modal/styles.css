@@ -1,0 +1,35 @@
+p {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+#modal--equation {
+    /* border: 1px solid black; */
+    -webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+#modal--equation>b {
+    padding: 5px 0;
+}
+
+#modal--ref {
+    font-size: 12px;
+}
+
+@media all and (min-width: 768px) {
+    p {
+        font-size: 22px;
+    }
+
+    #modal--equation {
+        padding: 20px;
+    }
+
+    #modal--ref {
+        font-size: 20px;
+    }
+}

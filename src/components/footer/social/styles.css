@@ -1,0 +1,51 @@
+#social--mainWrapper {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    /* background-color: #343a40; */
+    background-color: #191919;
+    color: #E5E5E5;
+}
+
+ul {
+    margin-bottom: 0 !important;
+}
+
+li {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0 5px;
+    font-size: 25px;
+    line-height: 40px;
+}
+
+li>a {
+    color: #ff3366;
+}
+
+li>a,
+li>a:hover {
+    text-decoration: none;
+}
+
+#social--mainWrapper span {
+    line-height: 40px;
+    font-size: 18px;
+}
+
+@media all and (min-width: 768px) {
+
+    ul,
+    li {
+        display: inline-block;
+        text-decoration: none;
+        padding: 0 15px;
+        font-size: 30px;
+        line-height: 80px;
+    }
+
+    #social--mainWrapper span {
+        line-height: 80px;
+        font-size: 22px;
+    }
+}

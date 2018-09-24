@@ -5,3 +5,13 @@
 #header--modal {
     display: none;
 }
+
+.modal-title {
+    font-size: 16px;
+}
+
+@media all and (min-width: 768px) {
+    .modal-title {
+        font-size: 24px;
+    }
+}

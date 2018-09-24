@@ -56,13 +56,13 @@ class Line {
 }
 
 function deviceConfig(p) {
-  if (p.windowWidth <= 1024) {
+  if (p.windowWidth < 768) {
     // iPad or mobile
-    p.translate(p.width / 2, 0);
+    p.translate(p.width / 2, 2);
     p.rotate(p.PI / 2);
   } else {
     // Desktop
-    p.translate(0, p.height / 2);
+    p.translate(10, p.height / 2);
   }
 }
 
@@ -82,7 +82,6 @@ function step(p) {
     arcs.push(line);
   }
 
-  //   let diameter = Math.abs(next - index);
   //   let x = (next + index) / 2;
 
   //   p.stroke(lineColor);
@@ -90,17 +89,19 @@ function step(p) {
   //   if (count % 2 == 0) p.arc(x, p.height / 2, diameter, diameter, Math.PI, 0);
   //   else p.arc(x, p.height / 2, diameter, diameter, 0, Math.PI);
 
-  if (index > biggest) biggest = index;
-  if (next > biggest) biggest = next;
-
+  if (index > biggest) biggest = index + 2;
+  if (next > biggest) biggest = next + 2;
+  // console.log("index=" + index);
+  // console.log("next=" + next);
+  // console.log("biggest=" + biggest);
   index = next;
   count++;
 }
 
 export default function sketch(p) {
   p.setup = function() {
-    if (p.windowWidth < 768) {
-      p.createCanvas(p.windowWidth, p.windowHeight / 2);
+    if (p.windowWidth <= 1024) {
+      p.createCanvas(p.windowWidth / 1.2, p.windowHeight / 2);
     } else {
       p.createCanvas(p.windowWidth / 2, p.windowHeight / 2);
     }
@@ -139,15 +140,19 @@ export default function sketch(p) {
   };
 
   p.draw = function() {
-    if (count <= limit) {
+    if (count < limit) {
       deviceConfig(p);
-      p.scale(p.width / biggest);
+
       step(p);
+      p.scale(p.width / biggest);
 
       p.background(backgroundColor[0], backgroundColor[1], backgroundColor[2]);
       for (let a of arcs) {
         a.show(p);
       }
+    } else if (count === limit) {
+      step(p);
+      p.scale(p.width / biggest);
     }
   };
 }

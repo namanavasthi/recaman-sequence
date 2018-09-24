@@ -1,7 +1,15 @@
-#recaman--MainWrapper {
-    position: absolute;
-    left: 50%;
-    bottom: 20%;
-    transform: translate(-50%, 20%);
+#recaman--mainWrapper {
+    position: relative;
     max-width: 100%;
 }
+
+#recaman--mainWrapper canvas {
+    position: relative;
+    max-width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%);
+}
+
+@media all and (min-width: 768px) {}

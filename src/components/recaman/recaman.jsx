@@ -17,7 +17,7 @@ class Recaman extends Component {
 
   render() {
     return (
-      <div id="recaman--MainWrapper">
+      <div id="recaman--mainWrapper">
         <P5Wrapper
           limit={this.state.limit}
           shape={this.state.shape}

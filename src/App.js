@@ -10,6 +10,8 @@ import Form from "./components/form/form";
 
 import Controller from "./components/controller/controller";
 
+import Footer from "./components/footer/footer";
+
 class App extends Component {
   state = {
     limit: "10",
@@ -28,8 +30,11 @@ class App extends Component {
       <div className="App">
         <Header />
         {/* <Form /> */}
-        <Form onInput={this.handleInputChange} />
-        <Controller value={this.state} />
+        <div className="container" id="body">
+          <Form onInput={this.handleInputChange} />
+          <Controller value={this.state} />
+        </div>
+        <Footer />
       </div>
     );
   }

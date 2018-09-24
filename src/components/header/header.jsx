@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Modal from "./modal/modal";
 import "./styles.css";
 class Header extends Component {
   state = {
@@ -55,7 +56,9 @@ class Header extends Component {
           <div className="modal-dialog" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title">What is {this.state.title} ?</h5>
+                <h5 className="modal-title">
+                  <b>What is {this.state.title} ?</b>
+                </h5>
                 <button
                   type="button"
                   className="close"
@@ -66,12 +69,9 @@ class Header extends Component {
                 </button>
               </div>
               <div className="modal-body">
-                <p>Modal body text goes here.</p>
+                <Modal />
               </div>
               <div className="modal-footer">
-                {/* <button type="button" className="btn btn-primary">
-                  Save changes
-                </button> */}
                 <button
                   type="button"
                   className="btn btn-secondary"
